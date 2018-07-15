@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bem-vindo!</title>
+</head>
+<body>
+	
+		<div>
+			<h1>Bem-vindo!</h1>
+		</div>
+		
+	<div id="99">
+			<% if user_signed_in? %>
+				<ul>
+					<li> <%=current_user.email%></li>  |  <li><%= link_to "Sair",destroy_user_session_path, method: :delete%></li>
+				</ul>
+			<% else %>
+				<ul>
+					<%= link_to "Cadastro de novo usuário",new_user_registration_path%>  |  <%= link_to "Logar",new_user_session_path%>
+				</ul>
+			<% end %>
+	</div>
+	
+		<li><%= link_to "Produtos", products_path%></li>
+		<li><%= link_to "Categorias", categories_path%></li>
+		<li><%= link_to "Página Inicial", welcome_index_path%></li>
+
+
+</body>
+</html>
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class=<li><%= link_to "Produtos", products_path%></li></a>
+      <a class="nav-item nav-link" href="#">Pricing</a>
+      <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    </div>
+  </div>
+</nav>-->
