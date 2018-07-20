@@ -9,14 +9,15 @@
 			<h1>Bem-vindo!</h1>
 		</div>
 		
-	<div id="99">
+	<div>
 			<% if user_signed_in? %>
 				<ul>
-					<li> <%=current_user.email%></li>  |  <li><%= link_to "Sair",destroy_user_session_path, method: :delete%></li>
+					<li> <%=current_user.email%></li>    <li><%= link_to "Sair",destroy_user_session_path, method: :delete%></li>
 				</ul>
 			<% else %>
 				<ul>
-					<%= link_to "Cadastro de novo usuário",new_user_registration_path%>  |  <%= link_to "Logar",new_user_session_path%>
+					<li><%= link_to "Cadastro de novo usuário",new_user_registration_path%></li>
+					<li><%= link_to "Logar",new_user_session_path%></li>
 				</ul>
 			<% end %>
 	</div>

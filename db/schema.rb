@@ -18,25 +18,17 @@ ActiveRecord::Schema.define(version: 2018_07_14_005001) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "characteristics", force: :cascade do |t|
-    t.text "obs"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
-    t.integer "characteristic_id"
     t.string "photo_file_name"
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
     t.string "characteristic"
     t.index ["category_id"], name: "index_products_on_category_id"
-    t.index ["characteristic_id"], name: "index_products_on_characteristic_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,10 +44,6 @@ ActiveRecord::Schema.define(version: 2018_07_14_005001) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
